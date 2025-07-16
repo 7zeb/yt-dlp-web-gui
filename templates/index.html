@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>yt-dlp GUI</title>
+  <style>
+    body {
+      background: url('{{ url_for("static", filename="background.jpg") }}') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      width: 400px;
+      margin: auto;
+    }
+
+    input, select, button {
+      width: 90%;
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.6);
+      color: black;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background: rgba(0, 120, 215, 0.8);
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Download a Video</h1>
+  <p>Made by 7Zeb</p>
+  <form method="POST" action="/download">
+    <input type="text" name="url" placeholder="Enter video URL" required>
+    <select name="format" required>
+      <option value="mp3">MP3</option>
+      <option value="m4a">M4A</option>
+      <option value="mp4">MP4</option>
+      <option value="thumbnail">Thumbnail</option>
+    </select>
+    <button type="submit">Download</button>
+  </form>
+</body>
+</html>
